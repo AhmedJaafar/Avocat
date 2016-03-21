@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 class CompetenceController extends Controller
 {
     public function competenceAction(Request $request)
-    {
+    { /*test*/
 
     	$competence = new Competence();
         $form = $this->createForm(CompetenceType::class, $competence);
