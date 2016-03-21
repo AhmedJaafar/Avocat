@@ -1,0 +1,60 @@
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
+
+ 
+<form  action="{{ path('front_information') }}"  method="post">
+    {{form_widget(form.gouvernorats, { 'id': 'test' } )}}
+	
+	 {{form_widget(form.villes, { 'id': 'villes' } )}}
+	
+</form>
+
+
+
+<script>
+
+
+            //#form_pays représente la liste déroulante des pays, on lui indique de lancer une fonction au changement de choix dans la liste déroulante grâce à ".change(...). 
+
+            $("#test").change(function() {
+		
+
+                $.ajax({
+
+
+                    //On lui indique le type d'envoie des informations
+
+                    type: 'POST',
+
+                    //On lui indique le chemin de la fonction
+
+                    url:  '{{ path('front_ville') }}',
+
+
+                    //On lui donne la valeur du choix qu'on a fait, et id est la variable qui va contenir notre valeur, nous la retrouvons dans notre controller
+
+                    data: 'id=' + $("#test").val(),
+
+
+                    //Enfin nous lui disons de remplir notre formulaire avec le resultat  
+
+                    success: function(response)
+
+                    {
+
+                        $('#villes').find("option").remove();
+
+                        $.each(response, function(i, item) {
+
+                            $('#villes').append(new Option(item, i));
+
+                        });
+
+                    }
+
+                }
+
+            )});
+
+   </script>

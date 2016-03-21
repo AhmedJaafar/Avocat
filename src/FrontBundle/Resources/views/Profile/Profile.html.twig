@@ -1,0 +1,54 @@
+{% extends 'base.html.twig'%}
+{% block body %}
+<p><h1> information  </h1></p>
+
+
+<div id="sidebar">
+    {{ render(controller(
+        'FrontBundle:Information:information'
+    )) }}
+</div>
+
+
+<p><h1> PROFILE  </h1></p>
+
+<p>role: {{ app.user.roles[0] }}</p>
+<p>Id: {{ app.user.id }}</p>
+<p>Username: {{ app.user.username }}</p>
+<p>Last login: {{ app.user.lastLogin|date("Y-m-d H:i:s")  }}</p>
+
+
+
+
+
+<p><h1> PHOTO </h1></p>
+
+<div id="sidebar">
+    {{ render(controller(
+        'FrontBundle:Photo:photo'
+    )) }}
+</div>
+
+
+<p><h1> COMPETENCE </h1></p>
+
+<div id="sidebar">
+    {{ render(controller(
+        'FrontBundle:Competence:competence'     
+    )) }}
+</div>
+
+
+<p><h1> Langue </h1></p>
+
+<div id="sidebar">
+    {{ render(controller(
+        'FrontBundle:Langue:langue'     
+    )) }}
+</div>
+
+
+
+
+
+{% endblock %}

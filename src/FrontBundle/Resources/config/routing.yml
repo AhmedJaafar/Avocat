@@ -1,0 +1,33 @@
+front_homepage:
+    path:     /
+    defaults: { _controller: FrontBundle:Home:index }
+
+front_photodeprofile:
+    path:     /Photo
+    defaults: { _controller: FrontBundle:Photo:photo }
+
+front_competence:
+    path:     /Competence
+    defaults: { _controller: FrontBundle:Competence:competence }
+
+front_competence_update:
+    path:     /Competence/update/{id}
+    defaults: { _controller: FrontBundle:Competence:update }
+
+front_langue:
+    path:     /Langue
+    defaults: { _controller: FrontBundle:Langue:langue }
+
+
+front_information:
+    path:     /Information
+    defaults: { _controller: FrontBundle:Information:information }
+
+front_ville:
+    path:     /ville
+    defaults: { _controller: FrontBundle:Ville:ville }
+
+
+
+
+

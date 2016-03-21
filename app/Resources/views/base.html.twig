@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        <link href="{{ asset('Front/css/style.css') }}" type="text/css" rel="stylesheet" media="all">
+
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('Front/js/move-top.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('Front/js/easing.js') }}"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="{{ asset('Front/js/jquery-1.11.1.min.js') }}"></script> 
+         <script src="{{ asset('Front/js/responsiveslides.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
+

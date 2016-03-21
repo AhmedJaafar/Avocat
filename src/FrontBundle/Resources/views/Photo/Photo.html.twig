@@ -1,0 +1,10 @@
+{% extends 'base.html.twig'%}
+{% block body %}
+
+
+
+<form  action="{{ path('front_photodeprofile') }}" {{form_enctype(form)}} method="post">
+     {{ form(form) }}
+</form>
+
+{% endblock %}
